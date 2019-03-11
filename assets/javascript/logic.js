@@ -16,7 +16,7 @@ $.ajax({
                     "<p>" + "Away: " + results[i].strAwayTeam + "</p>" +
                     "<p>" + "Date: " + results[i].dateEvent +  "</p>" );
         gameDiv.addClass("gameContainer");
-        $("#games-view").append(gameDiv);
+        $("#schLoc").append(gameDiv);
         console.log(gameDiv)
     }
 });
