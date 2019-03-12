@@ -28,9 +28,21 @@ console.log(response);
         gameDiv.html("<p>" + againstStatement + "</p>" +
                     "<p>" + "Sunday " + results[i].dateEvent + " at " + results[i].strTime + "</p>" );
         gameDiv.addClass("gameContainer");
+    
+      
+      
+      
+      
+    
+      
+      
+ lonz
+        $("#schLoc").append(gameDiv);
+        console.log(gameDiv)
         $(gameDiv).attr('id', opponent);
         $("#games-view").append(gameDiv);
         console.log(opponent);
+ master
     }
    
 });
