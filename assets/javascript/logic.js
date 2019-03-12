@@ -1,41 +1,22 @@
 // Schedule API
 
-var queryURL = "https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=134865"
+var queryURL = "https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=134865";
+
 $.ajax({
     url: queryURL,
-    method: "GET",
+    method: "GET"
+})
+    // We store all of the retrieved data inside of an object called "response"
+    .then(function (response) {
 
-}).then(function (response) {
-    
-console.log(response);
-    var results = response.events;
+        // Log the queryURL
+        console.log(queryURL);
 
-    for (var i = 0; i < results.length; i++) {
+        // Log the resulting object
+        console.log(response);
 
-        //determining the opposing team and againstStatement
-        if (results[i].strHomeTeam === "Golden State Warriors"){
-            var opponent = results[i].strAwayTeam;
-            var againstStatement = "vs " + opponent;
-        }
-        else {
-        var opponent = results[i].strHomeTeam;
-        var againstStatement = "@ " + opponent;
-            };
+      
 
-
-        // displaying the againstStatement and date of game
-        var gameDiv = $("<div>");
-        gameDiv.html("<p>" + againstStatement + "</p>" +
-                    "<p>" + "Sunday " + results[i].dateEvent + " at " + results[i].strTime + "</p>" );
-        gameDiv.addClass("gameContainer");
-    
-      
-      
-      
-      
-    
-      
-      
  
         $("#schLoc").append(gameDiv);
         console.log(gameDiv)
@@ -43,9 +24,47 @@ console.log(response);
         $("#games-view").append(gameDiv);
         console.log(opponent);
 
-    }
-   
-});
 
 
-// GIPHY API
+                var $div = $("<div>", test);
+                $div.html("New Division");
+                $("body").append($div);
+
+
+            
+        
+
+
+
+        /*var results = response.events;
+
+        
+        for (var i = 0; i < results.length; i++);
+       {
+
+          var gameDiv = $("<div>");
+            gameDiv.html("<p>" + againstStatement + "</p>" +
+                "<p>" + "Sunday " + results[i].dateEvent + " at " + results[i].strTime + "</p>");
+            gameDiv.addClass("gameContainer");
+
+            console.log(results);
+
+
+
+
+
+
+           /* lonz
+            $("#schLoc").append(gameDiv);
+            console.log(gameDiv)
+            $(gameDiv).attr('id', opponent);
+            $("#games-view").append(gameDiv);
+            console.log(opponent);
+            master*/
+
+    
+
+    );
+
+
+
