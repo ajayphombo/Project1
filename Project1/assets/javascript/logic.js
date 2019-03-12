@@ -1,11 +1,16 @@
+
 var config = {
     apiKey: "AIzaSyA2mujEDdigwDCd49APf51TBkQQKiareU4",
-    authDomain: "recent-user-with-all-use-e8e76.firebaseapp.com",
-    databaseURL: "https://recent-user-with-all-use-e8e76.firebaseio.com",
-    projectId: "recent-user-with-all-use-e8e76",
-    storageBucket: ""
+    authDomain: "syproject-6abc1.firebaseapp.com",
+    databaseURL: "https://syproject-6abc1.firebaseio.com",
+    projectId: "syproject-6abc1",
+    storageBucket: "syproject-6abc1.appspot.com",
+    messagingSenderId: "71556885484"
   };
+  firebase.initializeApp(config);
 
+
+console.log(config);
 
 var queryURL = "https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=134865"
 $.ajax({
