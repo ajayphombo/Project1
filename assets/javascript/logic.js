@@ -17,6 +17,15 @@ $.ajax({
 
       
 
+ 
+        $("#schLoc").append(gameDiv);
+        console.log(gameDiv)
+        $(gameDiv).attr('id', opponent);
+        $("#games-view").append(gameDiv);
+        console.log(opponent);
+
+
+
                 var $div = $("<div>", test);
                 $div.html("New Division");
                 $("body").append($div);
@@ -52,9 +61,10 @@ $.ajax({
             $("#games-view").append(gameDiv);
             console.log(opponent);
             master*/
-    }
+
+    
 
     );
 
 
-// GIPHY API
+
