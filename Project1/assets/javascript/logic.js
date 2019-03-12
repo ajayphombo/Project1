@@ -1,3 +1,11 @@
+var config = {
+    apiKey: "AIzaSyA2mujEDdigwDCd49APf51TBkQQKiareU4",
+    authDomain: "recent-user-with-all-use-e8e76.firebaseapp.com",
+    databaseURL: "https://recent-user-with-all-use-e8e76.firebaseio.com",
+    projectId: "recent-user-with-all-use-e8e76",
+    storageBucket: ""
+  };
+
 
 var queryURL = "https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=134865"
 $.ajax({
@@ -37,7 +45,8 @@ console.log(response);
 
         $(".gameContainer").on("click",function(){//when you click on the schedule
 
-            var gameId= $(this).prop("id");//grabs the "id= opponent" sets it to the var
+            var gameId= $(this).prop("id");
+            //grabs the "id= opponent" sets it to the var
             console.log(gameId);
         
             var query2URL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -50,7 +59,9 @@ console.log(response);
         
             .then(function(response) {
                 var results = response.data;
+
                 console.log(results);
+
                 for (var i = 0; i < results.length; i++) {
                     var gifDiv = $("<div>");
                     var rating = results[i].rating;
