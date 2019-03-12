@@ -1,26 +1,65 @@
+// Schedule API
 
 var queryURL = "https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=134865";
 
 $.ajax({
     url: queryURL,
-    method: "GET",
-
+    method: "GET"
 })
+    // We store all of the retrieved data inside of an object called "response"
     .then(function (response) {
-    console.log(response);
 
-    var results = response.events;
-   
-    console.log(results);
-    for (var i = 0; i < results.length; i++);
-    {
+        // Log the queryURL
+        console.log(queryURL);
+
+        // Log the resulting object
+        console.log(response);
+
+        function new_div() {
+            $(document).ready(function() {
+              var test = {
+                id: "div",
+                class: "divclass",
+                css: {
+                  "color": "Green"
+                }
+              };
+              var $div = $("<div>", test);
+              $div.html("New Division");
+              $("body").append($div);
+            });
+            }
+            
         
-        var gameDiv = $("<div>");
-        gameDiv.html("<p>" + "Home: " + results[i].strHomeTeam + "</p>" +
-                    "<p>" + "Away: " + results[i].strAwayTeam + "</p>" +
-                    "<p>" + "Date: " + results[i].dateEvent +  "</p>" );
-        gameDiv.addClass("gameContainer");
-        $("#games-view").append(gameDiv);
-        console.log(gameDiv)
+
+        /*var results = response.events;
+
+        
+        for (var i = 0; i < results.length; i++);
+       {
+
+          var gameDiv = $("<div>");
+            gameDiv.html("<p>" + againstStatement + "</p>" +
+                "<p>" + "Sunday " + results[i].dateEvent + " at " + results[i].strTime + "</p>");
+            gameDiv.addClass("gameContainer");
+
+            console.log(results);
+
+
+
+
+
+
+           /* lonz
+            $("#schLoc").append(gameDiv);
+            console.log(gameDiv)
+            $(gameDiv).attr('id', opponent);
+            $("#games-view").append(gameDiv);
+            console.log(opponent);
+            master*/
     }
-});
+
+    );
+
+
+// GIPHY API

@@ -1,0 +1,41 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    background-color: white;
+
+}
+
+
+.container {
+
+    background-color: royalblue;
+    color: gold;
+}
+
+#schLoc {
+    border: solid;
+}
+
+.gameContainer {
+    border: solid;
+}
+/*=======
+master
