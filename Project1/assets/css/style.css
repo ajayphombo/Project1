@@ -5,14 +5,19 @@ body {
 }
 
 
-.container {
-
+.container, .jumbotron {
+    border: 2px solid black;
+    align-items: flex-start;
     background-color: royalblue;
     color: gold;
 }
 
-#schLoc {
-    border: solid;
+h1{
+    font-style: italic
+}
+
+#schLoc{
+    
 }
 
 .gameContainer {
