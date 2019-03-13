@@ -1,14 +1,40 @@
 body {
-    background-color: #efefef;
-    font-family: Tahoma, Geneva, sans-serif;
+    background-color: #efefef;;
+    font-family: 'Roboto', sans-serif;
+    background-image: url("./background.jpg");
+}
+
+p {
+    padding: 0px;
+    padding-left: 10px;
+    line-height: 1.2;
+}
+
+#roster {
+    border-style: solid;
+}
+
+@font-face {
+    font-family: copperPlate regular;
+    src: url("./CopperPlateRegular.ttf");
+  }
+
+#logo {
+    width: 100%;
+    padding: 15px;
+}
 
 h1 {
     font-size: 55px;
     padding: 10px;
 }
+#dt{
+    text-align: center;
+}
+
 
 h3 {
-    text-align: left;
+    text-align: center;
 }
 
 header {
@@ -17,56 +43,43 @@ header {
     padding: 0px;
     line-height: 1;
 }
-
+#contentTitle {
+    padding: 0px;
+    margin-bottom: 0px;
+}
 .container {
-    text-align: inherit;
     background-color: #214a9c;
     color: #fcbf16;
 }
 
-
-
-h1{
-    font-style: italic
-}
-
-#schLoc{
-    border: 3px solid black;
-    padding: 5px;
-   
+#schLoc {
+    border: solid;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
 }
 
 .gameContainer {
     border: solid;
+    margin: 10px;
     margin-left: 0px;
     margin-right: 0px;
-    margin: 10px;
 }
-
 
 .gif {
     width: 100%;
     padding: 0px;
-    
 }
 #contentTitle{
     border: #fcbf16 solid 2px;
 }
 
-#gifDisplay{
-    border: #fcbf16 solid 2px;
-
+#roster {
+    line-height: 0%;
+    text-align: left;
 }
-    
-    #roster{
-        border: #fcbf16 solid 2px;
-    }
 
-/*#playerList {text-align: justify;
-    border: #fcbf16 solid 2px;
-    padding-top: 0%;
-    padding-bottom: 0%;
-    margin: 0%;
-
-
+#gameDate {
+    text-align: left;
+    padding-left: 15px;
 }
