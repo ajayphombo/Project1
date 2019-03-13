@@ -28,7 +28,7 @@ h1 {
     font-size: 55px;
     padding: 10px;
 }
-
+h2 {text-align: left;}
 
 
 h3 {
@@ -51,7 +51,7 @@ header {
 }
 
 #schLoc {
-    border: solid;
+    border: none;
     border-left: none;
     border-top: none;
     border-bottom: none;
@@ -59,9 +59,17 @@ header {
 
 .gameContainer {
     border: solid;
-    margin: 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
     margin-left: 0px;
     margin-right: 0px;
+}
+.gameContainer:hover { 
+    background-color: #355caa;
+  }
+
+#gameTimeContent {
+    text-align: center;
 }
 
 .gif {
@@ -75,6 +83,17 @@ header {
 }
 
 #gameDate {
-    text-align: left;
-    padding-left: 15px;
+    text-align: center;
+    
 }
+
+ul{background:#214a9c;
+    margin-bottom:0;
+    padding:15px;
+    border-bottom:solid;
+ 
+ }
+ .card{
+    background-color:#355caa;
+    border:solid;
+ }

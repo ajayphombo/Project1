@@ -46,7 +46,7 @@ $.ajax({
 
     }
 //****************** */ initial display in content area***************************************************************************
-$("#gameTimeContent").text((scheduleResults[0].dateEvent + " at " + scheduleResults[0].strTime));
+
 
 if (scheduleResults[0].strHomeTeam === "Golden State Warriors"){
     var initialOpponent = scheduleResults[0].strAwayTeam;
@@ -54,6 +54,8 @@ if (scheduleResults[0].strHomeTeam === "Golden State Warriors"){
 else {
 var initialOpponent = scheduleResults[0].strHomeTeam;
     };
+
+$("#gameTimeContent").text((initialOpponent + " " + scheduleResults[0].dateEvent + " at " + scheduleResults[0].strTime));
 
 // initial display gif in content area
 var query2URL = "https://api.giphy.com/v1/gifs/random?api_key=fTQFhu3tMcEVU2sqaVkMweJGunYG68UR&tag=" + initialOpponent;
@@ -118,7 +120,7 @@ $.ajax({
         // gameId is id(name of opposing team) of the gameContainer that is clicked 
         var gameId= $(this).prop("id");
         var gameTime= $(this).val();
-        $("#gameTimeContent").text(gameTime);
+        $("#gameTimeContent").text(gameId + " " + gameTime);
         // clearing roster list
         $("#playerList").html("");
 
@@ -186,6 +188,39 @@ $.ajax({
             
     })
 });
+
+var config = {
+    apiKey: "AIzaSyDUhdVMGCvPncMs5xK5iFRPU5HPIsaEnnE",
+    authDomain: "dubsmatchup.firebaseapp.com",
+    databaseURL: "https://dubsmatchup.firebaseio.com",
+    projectId: "dubsmatchup",
+    storageBucket: "dubsmatchup.appspot.com",
+    messagingSenderId: "678161686628"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
+  $("#add-comment-btn").on("click", function(event) {
+    event.preventDefault();
+    // Grabs user input
+    var comment = $("#userComment-input").val().trim();
+    var newComment = {
+      userComment: comment,
+    };
+    database.ref().push(newComment);
+    console.log(newComment.userComment);
+    $("#userComment-input").val("");
+  });
+  database.ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
+    // Storeinto a variable.
+    var comment = childSnapshot.val().userComment;
+    console.log(comment);
+    var newComment = $(".container-fluid").prepend(
+      $("<ul>").text(comment),
+    );
+  });
+ 
+ 
 
 
 
