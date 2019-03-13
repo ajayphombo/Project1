@@ -9,36 +9,47 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    
+
 </head>
 
 <body>
-    <div class="jumbotron" style="background-color: royalblue; color:gold">
+    <header style="background-color: #214a9c; color:#fcbf16">
         <h1 class="text-center">Warriors Upcoming Games</h1>
-    </div>
-    <div id="clock"></div>
+    </header>
+
+
+
     <div class="container">
         <!--Container for entire content-->
+        
 
         <div class="row">
+            
             <!--Two column-->
             <section class="col-lg-3" id="schLoc">
                 <!--Sechdule-->
-                <h1>Upcoming Events</h1>
 
             </section>
 
             <section class="col-lg-9">
-                <h1>Content</h1>
-                <form id="add-cafe-form">
-                    <input type="radio" name="name" placeholder="Cafe name">
-                    <label>Warrios</label>
-                    <input type="radio" name="city" placeholder="Cafe city">
-                    <label>Opponent</label>
-                    <button>Submit</button>
-                </form>
 
-                <div id="display"></div>
+                <div class="row">
+                    <h1 id="contentTitle"></h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div id="gifDisplay"></div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div id="roster">
+                            <h3>Roster</h3>
+                            <div id="playerList"></div>
+                        </div>
+                    </div>
+                </div>
+
 
             </section>
 
@@ -49,9 +60,9 @@
 
 
 
-        <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
         <script type="text/javascript" src="./assets/javascript/logic.js"></script>
         
 
