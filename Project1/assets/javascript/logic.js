@@ -33,18 +33,21 @@ $.ajax({
         // displaying the againstStatement and date of game
         var gameDiv = $("<div>");
         gameDiv.html("<p>" + againstStatement + "</p>" +
-                    "<p>" + scheduleResults[i].dateEvent + " at " + scheduleResults[i].strTime + "</p>" );
+                    "<p>" + scheduleResults[i].dateEvent + " at " + scheduleResults[i].strTime  + "</p>" );
         gameDiv.addClass("gameContainer");
     
     
         $("#schLoc").append(gameDiv);
        // console.log(gameDiv)
         $(gameDiv).attr('id', opponent);
+        $(gameDiv).val((scheduleResults[i].dateEvent + " at " + scheduleResults[i].strTime));
         $("#games-view").append(gameDiv);
         //console.log(opponent);
 
     }
 //****************** */ initial display in content area***************************************************************************
+$("#gameTimeContent").text((scheduleResults[0].dateEvent + " at " + scheduleResults[0].strTime));
+
 if (scheduleResults[0].strHomeTeam === "Golden State Warriors"){
     var initialOpponent = scheduleResults[0].strAwayTeam;
 }
@@ -114,7 +117,8 @@ $.ajax({
     $(".gameContainer").on("click", function(){
         // gameId is id(name of opposing team) of the gameContainer that is clicked 
         var gameId= $(this).prop("id");
-        
+        var gameTime= $(this).val();
+        $("#gameTimeContent").text(gameTime);
         // clearing roster list
         $("#playerList").html("");
 
