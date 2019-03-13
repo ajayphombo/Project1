@@ -1,24 +1,26 @@
-var config = {
-    apiKey: "AIzaSyA2mujEDdigwDCd49APf51TBkQQKiareU4",
-    authDomain: "syproject-6abc1.firebaseapp.com",
-    databaseURL: "https://syproject-6abc1.firebaseio.com",
-    projectId: "syproject-6abc1",
-    storageBucket: "syproject-6abc1.appspot.com",
-    messagingSenderId: "71556885484"
+
+
+// object with team ids for api input
+let Players = {
+    "Houston Rockets": "134876",
+    "Oklahoma City Thunder": "134887",
+    "San Antonio Spurs": "134879",
+    "Minnesota Timberwolves": "134886",
+    "Indiana Pacers": "134873",
+    "Dallas Mavericks": "134875",
+    "Detroit Pistons": "134872"
 };
-firebase.initializeApp(config);
 
 
-console.log(config);
-
+// api for displaying schedule
 var queryURL = "https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=134865"
+
 $.ajax({
     url: queryURL,
     method: "GET",
 
 }).then(function (response) {
 
-    console.log(response);
     var results = response.events;
 
     for (var i = 0; i < results.length; i++) {
@@ -42,57 +44,84 @@ $.ajax({
 
 
         $("#schLoc").append(gameDiv);
-        console.log(gameDiv);
+        // console.log(gameDiv)
         $(gameDiv).attr('id', opponent);
         $("#games-view").append(gameDiv);
-        console.log(opponent);
+        //console.log(opponent);
 
-        $(".gameContainer").on("click", function () {//when you click on the schedule
+    };
 
-            var gameId = $(this).prop("id");
-            //grabs the "id= opponent" sets it to the var
-            console.log(gameId);
+    // on clicking a schedule display gif and roster
 
-            var query2URL = "https://api.giphy.com/v1/gifs/search?q=" +
-                gameId + "&api_key=fTQFhu3tMcEVU2sqaVkMweJGunYG68UR&limit=10";
+    $(".gameContainer" || "#gifDisplay").on("click", function () {
+        var gameId = $(this).prop("id");
+        $("#playerList").html("");
+        //gif api
+        //$("#contentTitle").text(gameId)
+        var query2URL = "https://api.giphy.com/v1/gifs/random?api_key=fTQFhu3tMcEVU2sqaVkMweJGunYG68UR&tag=" + gameId;
 
-            $.ajax({
-                url: query2URL,
-                method: "GET"
+        $.ajax({
+            url: query2URL,
+            method: "GET"
+        })
+
+            .then(function (response) {
+                var results = response.data;
+                var topicImage = $("<img>");
+                console.log(results)
+                //topicImage.attr("src", results[i].images.fixed_height_still.url);
+                //topicImage.attr("data-still",results[i].images.fixed_height_still.url);
+                topicImage.attr("src", results.images.original.url);//source of the gif
+                // topicImage.attr("data-state","still");
+                topicImage.addClass("gif");
+
+                $("#gifDisplay").html(topicImage);
+
             })
 
-                .then(function (response) {
-                    var results = response.data;
+        //roster api
+        var queryURL = "https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=" + Players[gameId]; //134865";
 
-                    console.log(results);
+        $.ajax({
+            url: queryURL,
+            method: "GET",
 
-                    for (var i = 0; i < results.length; i++) {
-                        var gifDiv = $("<div>");
-                        var rating = results[i].rating;
-                        var p = $("<p>").text("Rating: " + rating);
-                        var topicImage = $("<img>");
-                        //topicImage.attr("src", results[i].images.fixed_height_still.url);
-                        //topicImage.attr("data-still",results[i].images.fixed_height_still.url);
-                        topicImage.attr("src", results[i].images.fixed_height.url);//source of the gif
-                        // topicImage.attr("data-state","still");
-                        topicImage.addClass("gif");
-                        gifDiv.append(p);
-                        gifDiv.append(topicImage);
-                        $("#display").html(gifDiv);
+        }).then(function (response) {
 
-                    }
-                });
+            var results = response.player;
+            console.log(results)
+
+            for (var i = 0; i < results.length; i++) {
+                var player = $("<p>");
+                player.text(results[i].strPlayer + ", " + results[i].strPosition);
+
+                $("#playerList").append(player);
+            }
+        })
 
 
+        //team info api
+        var queryURL = "https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=" + Players[gameId]; //134865";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+
+        }).then(function (response) {
+            console.log(response)
+            var results = response.teams[0];
+            console.log(results.strTeamBadge);
+            var logo = $("<img>");
+            logo.attr("src", results.strTeamBanner);
+            logo.attr("id", "logo");
+            // console.log(logo)
+            $("#contentTitle").html(logo);
         })
 
 
 
 
-
-
-
-
-    }
-
+    })
 });
+
+

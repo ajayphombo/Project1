@@ -9,31 +9,52 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+
 </head>
 
 <body>
-    <div class="jumbotron">
-        <h1 class="text-center"><strong>Warriors Upcoming Games</strong></h1>
-    </div>
+    <header style="background-color: #214a9c; color:#fcbf16">
+        <h1 class="text-center">Warriors Upcoming Games</h1>
+    </header>
 
-    <div class="container, jumbotron">
+
+
+
+    <iframe src="http://free.timeanddate.com/clock/i6o8m3ki/n224/fn2/fs26/fcfcbf16/tct/pct/ahl/ftbi/pd3/tt0/tm1/ta1/tb4"
+        frameborder="0" width="369" height="76" allowTransparency="true"></iframe>
+
+
+    <div class="container">
         <!--Container for entire content-->
 
+
         <div class="row">
+
             <!--Two column-->
             <section class="col-lg-3" id="schLoc">
                 <!--Sechdule-->
-                <h1>Upcoming Events</h1>
 
             </section>
 
             <section class="col-lg-9">
-                <div id="content">
-                    <h1>Content</h1>
+
+                <div class="row">
+                    <h1 id="contentTitle"></h1>
                 </div>
-                
-                <div id="display"></div>
+
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div id="gifDisplay"></div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div id="roster">
+                            <h3>Roster</h3>
+                            <div id="playerList"></div>
+                        </div>
+                    </div>
+                </div>
+
 
             </section>
 
@@ -45,9 +66,11 @@
 
 
 
-        
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
         <script type="text/javascript" src="./assets/javascript/logic.js"></script>
+
+
 </body>
 
 </html>

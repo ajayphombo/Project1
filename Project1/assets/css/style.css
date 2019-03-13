@@ -1,22 +1,27 @@
-
 body {
-    background-color: goldenrod;
-    margin: 0%;
+    background-color: #efefef;
+    font-family: Tahoma, Geneva, sans-serif;
 
-
-}
-#content {border: 3px solid black;
-    
-
+h1 {
+    font-size: 55px;
+    padding: 10px;
 }
 
-.container, .jumbotron {
-    text-align: center;
-    border: 2px solid black;
-   text-align: justify;
-    background-color: royalblue;
-    color: goldenrod;
-    padding: 0%;
+h3 {
+    text-align: left;
+}
+
+header {
+    font-family: copperPlate Regular;
+    margin: 0px;
+    padding: 0px;
+    line-height: 1;
+}
+
+.container {
+    text-align: inherit;
+    background-color: #214a9c;
+    color: #fcbf16;
 }
 
 
@@ -33,9 +38,35 @@ h1{
 
 .gameContainer {
     border: solid;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin: 10px;
 }
 
-#buttons{
-    padding: 5px;
+
+.gif {
+    width: 100%;
+    padding: 0px;
+    
+}
+#contentTitle{
+    border: #fcbf16 solid 2px;
+}
+
+#gifDisplay{
+    border: #fcbf16 solid 2px;
+
+}
+    
+    #roster{
+        border: #fcbf16 solid 2px;
+    }
+
+/*#playerList {text-align: justify;
+    border: #fcbf16 solid 2px;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    margin: 0%;
+
 
 }
