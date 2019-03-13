@@ -61,7 +61,7 @@ var initialOpponent = scheduleResults[0].strHomeTeam;
     };
 
 // initial display gif in content area
-var query2URL = "https://api.giphy.com/v1/gifs/random?api_key=fTQFhu3tMcEVU2sqaVkMweJGunYG68UR&tag=" + initialOpponent;
+var query2URL = "http://api.giphy.com/v1/gifs/random?api_key=fTQFhu3tMcEVU2sqaVkMweJGunYG68UR&tag=" + initialOpponent;
 
     $.ajax({
         url: query2URL,
