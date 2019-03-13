@@ -1,38 +1,44 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-
-
-=======
-lonz
->>>>>>> 819b2aa58577a361fc0266b557526b9827c708fc
-
-
 body {
-    background-color: white;
+    background-color: #efefef;;
+    font-family: Tahoma, Geneva, sans-serif;
 
 }
 
+p {
+    padding: 0px;
+    padding-left: 0px;
+}
+
+@font-face {
+    font-family: copperPlate regular;
+    src: url("./CopperPlateRegular.ttf");
+  }
+
+#logo {
+    width: 100%;
+    padding: 15px;
+}
+
+h1 {
+    font-size: 55px;
+    padding: 10px;
+}
+
+h3 {
+    text-align: left;
+}
+
+header {
+    font-family: copperPlate Regular;
+    margin: 0px;
+    padding: 0px;
+    line-height: 1;
+}
 
 .container {
 
-    background-color: royalblue;
-    color: gold;
+    background-color: #214a9c;
+    color: #fcbf16;
 }
 
 #schLoc {
@@ -41,10 +47,19 @@ body {
 
 .gameContainer {
     border: solid;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin: 10px;
 }
-<<<<<<< HEAD
 
-=======
-=======
- master
->>>>>>> 819b2aa58577a361fc0266b557526b9827c708fc
+
+.gif {
+    width: 100%;
+    padding: 0px;
+    
+}
+
+#roster {
+    line-height: 0%;
+    text-align: left;
+}
