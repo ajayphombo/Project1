@@ -1,26 +1,41 @@
 
 body {
-    background-color: white;
+    background-color: goldenrod;
+    margin: 0%;
+
 
 }
+#content {border: 3px solid black;
+    
 
+}
 
 .container, .jumbotron {
+    text-align: center;
     border: 2px solid black;
-    align-items: flex-start;
+   text-align: justify;
     background-color: royalblue;
-    color: gold;
+    color: goldenrod;
+    padding: 0%;
 }
+
+
 
 h1{
     font-style: italic
 }
 
 #schLoc{
-    
+    border: 3px solid black;
+    padding: 5px;
+   
 }
 
 .gameContainer {
     border: solid;
 }
 
+#buttons{
+    padding: 5px;
+
+}
